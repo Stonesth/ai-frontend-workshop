@@ -1,4 +1,4 @@
-# ai-frontend-workshop
+# ai-frontend-workshop - ex1
 Tuto received at  the C3 Event Festival 2024
 
 # AI For Frontend Workshop
