@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { generateAnswer } from "./utils/langchain";
+import Message from "./components/Message/Message";
 
 export default function App() {
   const [question, setQuestion] = useState("")
@@ -12,7 +13,6 @@ export default function App() {
       const response = await generateAnswer(input)
 
       if (response) setResult({ ...result, answer: response })
-
     } catch(e) {
       console.error(e)
     }
@@ -28,6 +28,7 @@ export default function App() {
             </h1>
           <div className="h-full ">
             <div className="h-full flex flex-col items-center text-sm dark:bg-gray-800">
+              {result?.answer && <Message sender="Me" title="Now" message={result?.answer} />}
             </div>
           </div>
         </div>
